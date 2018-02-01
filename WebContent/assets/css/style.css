@@ -1,0 +1,652 @@
+/***** Media queries *****/
+@media (min-width: 1200px) {
+
+	.container{
+		width: 1290px;
+	}
+	.login-view .container{
+		width: 100%;
+	}
+	
+	.predashboard-view .container{
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (max-width: 767px) {
+	
+	.inner-bg { padding: 0 0 10px 0; }
+
+}
+
+@media (max-width: 415px) {
+	
+	h1, h2 { font-size: 32px; }
+
+}
+
+.login-view  a{
+	color: #fff;
+	text-decoration: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s; 
+    -ms-transition: all .3s; 
+    transition: all .3s;
+    font-size: 16px;
+    cursor: hand;
+}
+
+.login-view  a:hover{
+	color: #fff;
+	text-decoration: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s; 
+    -ms-transition: all .3s; 
+    transition: all .3s;
+    font-size: 16px;
+    cursor: hand;
+}
+
+.login-view  h2 {
+	margin-top: 10px;
+	font-size: 28px;
+    font-weight: 100;
+    color: #fff;
+    line-height: 30px;
+}
+
+.login-view  h3 {
+	font-size: 15px;
+    color: #fff;
+    line-height: 30px;
+}
+
+.login-view .btn-link-1 {
+	display: inline-block;
+	height: 40px;
+	padding: 10px 10px 0 10px;
+	background: #FF5A29;
+	font-size: 14px;
+    font-weight: 300;
+    line-height: 14px;
+    color: #fff;
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
+}
+.login-view .btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; color: #fff; }
+
+.login-view .btn-link-1.btn-link-1-facebook { background: #4862a3 !important; }
+.login-view .btn-link-1.btn-link-1-twitter { background: #55acee !important; }
+.login-view .btn-link-1.btn-link-1-google-plus { background: #dd4b39 !important; }
+
+.login-view .btn-link-1 i {
+	padding-right: 5px;
+	vertical-align: middle;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.login-view .btn-link-2 {
+	display: inline-block;
+	height: 50px;
+	margin: 5px;
+	padding: 15px 20px 0 20px;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #fff;
+	font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px; 
+    -webkit-border-radius: 4px; 
+    border-radius: 4px;
+}
+.login-view .btn-link-2:hover, .btn-link-2:focus, 
+.login-view .btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+
+
+
+/***** Top content *****/
+
+.top-content {
+}
+
+.inner-bg {
+    padding: 0 0 0 0;
+}
+
+.top-content .text {
+	color: #fff;
+}
+
+.top-content .text h1 { color: #fff; }
+
+.top-content .description {
+	margin: 10px 0 0px 0;
+}
+
+.top-content .description p { opacity: 0.8; }
+
+.top-content .description a {
+	color: #fff;
+}
+.top-content .description a:hover, 
+.top-content .description a:focus { border-bottom: 1px dotted #fff; }
+
+.form-box {
+	margin-top: 135px;
+}
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background: #444;
+	background: rgba(0, 0, 0, 0.9);
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+	text-align: left;
+}
+
+.form-top-left {
+	float: left;
+	width: 75%;
+	padding-top: 25px;
+}
+
+.form-top-left h3 { margin-top: 0; color: #fff; }
+.form-top-left p { opacity: 0.8; color: #fff; }
+
+.form-top-right {
+	float: left;
+	width: 25%;
+	padding-top: 5px;
+	font-size: 66px;
+	color: #fff;
+	line-height: 100px;
+	text-align: right;
+	opacity: 0.3;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #444;
+	background: rgba(0, 0, 0, 0.3);
+	-moz-border-radius: 0px 0px 0px 0px; 
+	-webkit-border-radius: 0px 0px 0px 0px; 
+	border-radius: 0px 0px 0px 0px;
+	text-align: left;
+	width:60%;
+	margin: 0 auto;
+}
+
+/* Login View CSS start*/
+
+.login-view .form-box {
+	margin-top: 60px;
+}
+.login-view .form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #444;
+	background: rgba(0, 0, 0, 0.3);
+	-moz-border-radius: 0px 0px 0px 0px; 
+	-webkit-border-radius: 0px 0px 0px 0px; 
+	border-radius: 0px 0px 0px 0px;
+	text-align: left;
+	width: 100% !important;
+	margin: 0 auto;
+}
+
+.login-view input{
+	border-radius: 5px !important;
+}
+
+.login-view .form-control {
+	display: inline-block;
+}
+.login-view .form-group .input-lg{
+	height: 40px;
+    border-radius: 6px 0px 0px 6px;
+    margin-right: -4px;
+}
+
+.login-view .form-group button.btn {
+	height: 51px;
+    margin: 0px 0px 3px 0px;
+	border-radius: 0px 6px 6px 0px;	
+}	
+
+/* Login View CSS end*/
+
+.aboutus {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.aboutus .page-header {
+	color: #fff;
+}
+
+.aboutus h2 {
+	color: #fff;
+}
+
+.aboutus .col-md-6 p {
+	color: #fff;
+}
+
+.contact-view{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.contact-view .col-md-4 {
+	color: #fff;
+}
+
+.contact-view .page-header {
+	color: #fff;
+}
+
+.contact-view  h3{
+	color: #fff;
+}
+
+.contact-view  form {
+	color: #fff;
+}
+
+.contact-view .col-lg-12 {
+	color: #fff;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form button.btn {
+
+}
+
+.form-bottom form .input-error {
+	border-color: #de615e;
+}
+
+.social-login {
+	margin-top: -5px !important;
+}
+
+.social-login h3 {
+	color: #fff;
+}
+
+.social-login-buttons {
+	margin-top: 10px;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+/*
+ * Masthead for nav
+ */
+
+.main-header .navbar-default {
+  background-color: #428bca;
+  border-color: #444;
+}
+
+
+.mb20 { margin-bottom: 20px; } 
+
+hgroup { padding-left: 15px; border-bottom: 1px solid #ccc; }
+hgroup h1 { font: 500 normal 1.625em "Roboto",Arial,Verdana,sans-serif; color: #fff; margin-top: 0; line-height: 1.15; }
+hgroup h2.lead { font: normal normal 14px "Roboto",Arial,Verdana,sans-serif; color: #fff; margin: 0; padding-bottom: 10px; }
+
+.search-result .thumbnail { 
+    background-color: transparent !important;
+    border: 0px !important;
+    
+}
+.search-result{
+	margin:0 auto;
+	width: 60%;
+	border: 5px red !important;
+	background: #2CA5AA !important;
+	border-radius: 12px !important;
+	padding-top: 10px;
+}
+
+.search-result .row{
+	margin-right: 0px !important;
+    margin-left: 0px !important;
+    width: 100% !important;
+    border: 5px red !important;
+    background: rgba(44, 165, 170, 0.9) !important;
+}
+
+.search-result:first-child { margin-top: 0 !important; }
+.search-result { margin-top: 20px; }
+.search-result .col-md-2 { border-right: 1px dotted #ccc; min-height: 140px; }
+.search-result ul { padding-left: 0 !important; list-style: none;  }
+.search-result ul li { font: 400 normal .85em "Roboto",Arial,Verdana,sans-serif;  line-height: 30px; }
+.search-result ul li i { padding-right: 5px; }
+.search-result .col-md-7 { position: relative; }
+.search-result h3 { font: 500 normal 20px "Roboto",Arial,Verdana,sans-serif; margin-top: 0 !important;  float: left;}
+.search-result h3 > a, .search-result i { font: 500 normal 20px "Roboto",Arial,Verdana,sans-serif; color: #fff !important;}
+.search-result p { font: normal normal 14px "Roboto",Arial,Verdana,sans-serif;  color: #fff; float: left;} 
+.search-result span.plus { position: absolute; right: 0; top: 126px; }
+.search-result span.plus a { background-color: #248dc1; padding: 5px 5px 3px 5px; }
+.search-result span.plus a:hover { background-color: #414141; }
+.search-result span.plus a i { color: #fff !important; }
+.search-result span.border { display: block; width: 97%; margin: 0 15px; border-bottom: 1px dotted #ccc; }
+
+
+.navbar-inverse {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-color: #fff !important;
+}
+
+.services-view {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.services-view .page-header{
+	color: #FF5A29;
+}
+
+.services-view .media-body{
+	color: #fff;
+}
+
+.home-view {
+	
+}
+
+.home-view button.btn {
+	height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #FF5A29;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+.home-view button.btn:hover { opacity: 0.6; color: #fff; }
+
+.home-view button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+
+.home-view button.btn:focus { outline: 0; opacity: 0.6; background: #FF5A29; color: #fff; }
+
+.home-view button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #FF5A29; color: #fff; }
+
+.home-view .form-control{
+
+}
+
+#page-wrapper:first-child{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+.d-header-view .navbar{
+	background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #e2e2e2);
+    border-bottom: 1px solid #ccc;
+    border-color: #e7e7e7;
+}
+
+.d-header-view .navbar-brand{
+	color: #7c795d; font-family: 'Trocchi', serif; font-size: 35px; font-weight: normal; 
+}
+
+.d-header-view .navbar-default{
+    border-color: #e7e7e7;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    font-size:14px;
+}
+
+.d-header-view  a{
+	color: #333;
+	text-decoration: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s; 
+    -ms-transition: all .3s; 
+    transition: all .3s;
+}
+
+.d-header-view  a:hover{
+	color: #333;
+	text-decoration: none;
+    -o-transition: all .3s; 
+    -moz-transition: all .3s; 
+    -webkit-transition: all .3s; 
+    -ms-transition: all .3s; 
+    transition: all .3s;
+}
+
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+.simpleDemo ul[dnd-list],
+.simpleDemo ul[dnd-list] > li {
+	position: relative;
+}
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+.simpleDemo ul[dnd-list] {
+    min-height: 42px;
+    padding-left: 0px;
+}
+
+/**
+ * The dndDraggingSource class will be applied to
+ * the source element of a drag operation. It makes
+ * sense to hide it to give the user the feeling
+ * that he's actually moving it.
+ */
+.simpleDemo ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+/**
+ * An element with .dndPlaceholder class will be
+ * added to the dnd-list while the user is dragging
+ * over it.
+ */
+.simpleDemo ul[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 42px;
+}
+
+/**
+ * The dnd-lists's child elements currently MUST have
+ * position: relative. Otherwise we can not determine
+ * whether the mouse pointer is in the upper or lower
+ * half of the element we are dragging over. In other
+ * browsers we can use event.offsetY for this.
+ */
+.simpleDemo ul[dnd-list] li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+}
+
+/**
+ * Show selected elements in green
+ */
+.simpleDemo ul[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.simpleDemo .panel-info{
+	margin:5px 5px 5px 5px;
+	min-height: 325px;
+} 
+
+.simpleDemo .servicelistclass{
+	min-height: 100px;
+} 
+
+
+.simpleDemo .row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.simpleDemo h3{
+	margin-top: 0px;
+}
+
+.fullwidth {
+	width:100%;
+}
+
+.predashboard-view .btn-group {
+	width: 100%;
+	height: 50px;
+	font-size: 20px !important;
+}
+
+.flat-view .square {
+    float:left;
+    position: relative;
+    width: 60px;
+    height:60px;
+    padding-bottom : 5px; /* = width for a 1:1 aspect ratio */
+    margin:5px;
+    background-color:#1E1E1E;
+    overflow:hidden;
+    color:#fff;
+}
+
+.flat-view .content {
+    position:absolute;
+    padding: 5px;
+    
+}
+
+.flat-view .row {
+  margin-bottom: 70px;
+}  
+
+.flat-view .flat-sample{
+	margin-bottom: 70px;
+	font-size:9px;
+}
+
+.flat-view .content{
+	margin-bottom: 70px;
+	font-size:9px;
+}
+
+.flat-view .desc{
+	margin-left:5px;
+	font-size:12px;
+}
+
+.success{
+	 background-color:green !important;
+}
+
+.warning {
+	 background-color:orange !important;
+}
+
+.flat-configure .nav-tabs { border-bottom: 2px solid #DDD; }
+.flat-configure .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.flat-configure .nav-tabs > li > a { border: none; color: #666; }
+.flat-configure .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+.flat-configure .nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.flat-configure .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.flat-configure .tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.flat-configure .tab-pane { padding: 15px 0; }
+.flat-configure .tab-content{padding:20px}
+
+.flat-configure .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+
+.flat-configure .top-margin{
+	margin-top:24px;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.grid-btn-margin{
+	margin-top: -6px;
+    margin-bottom: -6px;
+}
+
+

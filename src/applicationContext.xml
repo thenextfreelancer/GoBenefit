@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+	    http://www.springframework.org/schema/tx
+	    http://www.springframework.org/schema/tx/spring-tx.xsd
+	    http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:db.properties</value>
+				<value>classpath:hibernate.properties</value>
+				<value>classpath:mail.properties</value>
+				<value>classpath:application.properties</value>
+				<value>classpath:log4j.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+	<context:annotation-config />
+	<context:component-scan base-package="com.gobenefit" />
+	<import resource="dbConfig.xml" />
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${app.mail.server.host}" />
+		<property name="port" value="${app.mail.server.port}" />
+		<property name="username" value="${app.mail.server.username}" />
+		<property name="password" value="${app.mail.server.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">${app.mail.transport.protocol}</prop>
+				<prop key="mail.smtp.auth">${app.mail.smtp.auth}</prop>
+				<prop key="mail.smtp.starttls.enable">${app.mail.smtp.starttls.enable}</prop>
+				<prop key="mail.debug">${app.mail.debug}</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="basicAWSCredentials" class="com.amazonaws.auth.BasicAWSCredentials"
+		scope="prototype">
+		<constructor-arg index="0"
+			value="${app.amazon.server.AWSAccessKeyId}"></constructor-arg>
+		<constructor-arg index="1"
+			value="${app.amazon.server.AWSSecretKey}"></constructor-arg>
+	</bean>
+
+	<bean scope="prototype" id="amazonS3Client"
+		class="com.amazonaws.services.s3.AmazonS3Client">
+		<constructor-arg ref="basicAWSCredentials" />
+		<property name="endpoint" value="${app.amazon.server.s3.bucket.endPoint}" />
+	</bean>
+</beans>

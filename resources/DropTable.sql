@@ -1,0 +1,13 @@
+drop table `gobenefits`.`service_request`;
+drop table `gobenefits`.`flat_user_relationship`;
+drop table `gobenefits`.`user_activation`;
+drop table `gobenefits`.`user`;
+drop table `gobenefits`.`flat`;
+drop table `gobenefits`.`club`;
+drop table `gobenefits`.`tower`;
+drop table `gobenefits`.`apartment_facility_relationship`;
+drop table `gobenefits`.`apartment_facility`;
+drop table `gobenefits`.`apartment`;
+drop table `gobenefits`.`address`;
+drop table `gobenefits`.`user_role`;
+drop table `gobenefits`.`lookup_code`;

@@ -1,0 +1,81 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Booking Request Details</h3>
+	</div>
+	<div class="modal-body">
+	<div cg-busy="{promise:loading,message:'Loading...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+           <form name="bookingDetailsForm" id="serviceDetailsForm">
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Booking Type</label>
+                       <div>{{vm.bookingRequest.apartmentFacility.name}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Subject</label>
+                       <div>{{vm.bookingRequest.subject}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Description</label>
+                       <div>{{vm.bookingRequest.description}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Flat</label>
+                       <div>{{vm.bookingRequest.flat.flatNumber}} {{vm.bookingRequest.flat.floorNumber}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Request submitted on</label>
+                       <div>{{vm.bookingRequest.creationDate | date : "medium"}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Latest Action Taken On</label>
+                       <div>{{vm.bookingRequest.modifiedDate | date : "medium"}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Status</label>
+                       <div>{{vm.bookingRequest.status}}</div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Comments</label>
+                       <div ng-repeat="comment in vm.bookingRequest.serviceComments">
+                       	<hr ng-if="!$first"/>
+                       	<div>{{comment.user.name}} on {{comment.creationDate | date : "medium"}}</div>
+                       	<div>{{comment.userComment}}</div>
+                       </div>
+                   </div>
+               </div>
+               <hr />
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label >Add your comment</label>
+                       <textarea class="form-control" rows="3"></textarea>
+                       <br />
+                       <button class="btn btn-primary" ng-click="vm.addComment()" class="pull-right" >Add Comment</button>
+                   </div>
+               </div>
+           </form>
+       </div>
+       <div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="vm.close()">Close</button>
+	</div>
+</div>

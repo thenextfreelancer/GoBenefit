@@ -1,0 +1,155 @@
+<div class="flat-configure">
+	<div class="modal-header">
+		<h3 class="modal-title">Tower View</h3>
+	</div>
+	<div class="modal-body" >
+		<uib-tabset active="active"> 
+			<uib-tab index="0" heading="Configure Flats">
+			<div class="panel panel-default" ng-show="vm.flatList && vm.flatList.length > 0">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-2 pull-left"><i class="fa fa-dashboard fa-beer"></i> Flat List</div>
+							<div class="col-md-5 pull-right" >
+								<div>
+									<form>
+									    <div class="form-group" >
+									      <div class="input-group">
+									        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+									        <input type="text" class="form-control" placeholder="Search Flat..." ng-model="vm.searchFlat">
+									      </div>      
+									    </div>
+							  		</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-4" style="width: 100%;">
+								<div class="table-responsive">
+									<table class="table table-bordered table-hover table-striped">
+										<thead>
+											<tr>
+												<th class="col-md-2">Prefix</th>
+												<th style="display: none;"></th>
+												<th class="col-md-4">Flat Number</th>
+												<th class="col-md-4">Floor Number</th>
+												<th class="col-md-2">&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="flat in vm.flatList | filter:vm.searchFlat" style="max-height:500px;">
+												<td>{{flat.prefix}}</td>
+												<td style="display: none;">
+												<span editable-text="flat.id"  
+													e-name="id" e-form="flatForm" 
+													e-required>{{flat.id}}</span></td>
+												<td><span editable-text="flat.flatNumber" 
+													e-name="flatNumber" e-form="flatForm"
+													onbeforesave="vm.checkData($data, flat.flatNumber)" 
+													e-required>{{ flat.flatNumber || 'empty' }} </span></td>
+												<td><span editable-text="flat.floorNumber"
+													e-name="floorNumber" e-form="flatForm"
+													onbeforesave="vm.checkData($data, flat.floorNumber)"
+													e-required> {{ flat.floorNumber || 'empty' }} </span></td>
+												<td style="white-space: nowrap">
+													<!-- form -->
+													<form editable-form name="flatForm"
+														onaftersave="vm.saveFlat($data)"
+														ng-show="flatForm.$visible"
+														class="form-buttons form-inline" shown="inserted == flat">
+														<button type="submit" ng-disabled="flatForm.$waiting"
+															class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+														<button type="button" ng-disabled="flatForm.$waiting"
+															ng-click="flatForm.$cancel()" class="btn btn-default">
+															<i class="fa fa-times" aria-hidden="true"></i></button>
+													</form>
+													<div class="buttons" ng-show="!flatForm.$visible">
+														<button class="btn btn-primary"
+															ng-click="flatForm.$show()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+														<button class="btn btn-danger" 
+															ng-click="vm.deleteFlat(flatForm.$data)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- /.table-responsive -->
+							</div>
+							<!-- /.col-lg-4 (nested) -->
+						</div>
+						<!-- /.row -->
+					</div>
+					</div>
+					<div ng-show="!vm.flatList" >No Flat Added.</div>
+			</uib-tab> 
+			<uib-tab index="1" heading="Add Flats">
+				<form role="form">
+                   <div class="form-group">
+                   		<div class="row">
+                   			<div class="col-md-2">
+                   				<label>Prefix</label>
+                   				<input class="form-control" ng-model="vm.bulk.flatPre"  placeholder="Prefix"/>
+                   			</div>
+                   			<div class="col-md-2">
+                   				<label>Start Number</label>
+                   			 	<input class="form-control" ng-model="vm.bulk.flatNoStart" placeholder="Start Number"/>
+                   			</div>
+                   			<div class="col-md-2">
+                   				<label>Floor Count</label>
+                   				<input class="form-control" ng-model="vm.bulk.floorCount" placeholder="Floor Count"/>
+                   			</div>
+                   			<div class="col-md-3">
+                   				<label>Each Floor Count</label>
+                   				<input class="form-control" ng-model="vm.bulk.flatCountOnFloor" placeholder="Flat Count On Floor"/>
+                   			</div>
+                   			<div class="col-md-3">
+                   				<button type="submit" class="btn btn-success top-margin" ng-click="vm.generateFlats()"><i class="fa fa-gear"> Generate</i></button>
+                   			</div>
+                   		</div>
+                   </div>
+               	</form>
+               	<hr />
+				<form role="form" data-ng-repeat="flat in vm.flats" style="max-height:500px;">
+                   <div class="form-group">
+                   		<div class="row">
+                   			<div class="col-md-3">
+                   				<label ng-if="$first">Flat Prefix</label>
+                   				<input class="form-control" ng-model="flat.prefix"  placeholder="Prefix"/>
+                   			</div>
+                   			<div class="col-md-3">
+                   				<label ng-if="$first">Flat Number</label>
+                   			 	<input class="form-control" ng-model="flat.flatNumber" placeholder="Flat Number"/>
+                   			</div>
+                   			<div class="col-md-3">
+                   				<label ng-if="$first">Flat Number</label>
+                   				<input class="form-control" ng-model="flat.floorNumber" placeholder="Floor Number"/>
+                   			</div>
+                   			<div class="col-md-3">
+                   				<button type="reset" class="btn btn-default" ng-click="vm.removeFlat(flat)" ng-show="!$first"><i class="fa fa-minus"></i></button>
+                   				<button type="submit" class="btn btn-default" ng-click="vm.addNewFlat()" ng-show="$last" ng-class="$first?'top-margin':''"><i class="fa fa-plus"></i></button>
+                   			</div>
+                   		</div>
+                   </div>
+               	</form>
+				<button type="submit" class="btn btn-success" ng-click="vm.save('bulk')">Save</button>
+			</uib-tab> 
+			<uib-tab index="2" heading="Upload Flats">
+				<div class="row">
+					<div class="col-md-8">
+						<input type="file" ng-click="vm.clear()" onchange="angular.element(this).scope().vm.loadFile(this.files[0])" />
+					</div>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-primary pull-left"	ng-click="vm.upload()">Upload</button>
+					</div>
+				</div>
+				<hr />
+				<div ng-show="vm.uploadMessage"><strong>Success!</strong> Flats uploaded successfully. Click on View link to view flats.</div>
+			</uib-tab>
+		</uib-tabset>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Close</button>
+	</div>
+</div>

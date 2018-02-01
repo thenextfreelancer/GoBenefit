@@ -1,0 +1,85 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Profile</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-md-3 col-lg-3 " align="center"> 
+			<img ng-src="{{vm.userImg}}" class="img-circle img-responsive" style="height: 75%; width: 75%;" alt="User Pic">
+			<div class="form-group" ng-show="editableForm.$visible">
+                <label>Upload Pic</label>
+                <input type="file" ng-click="vm.clear();editableForm.$dirty = true;" onchange="angular.element(this).scope().vm.loadFile(this); " >
+            </div>
+			</div>
+                <div class=" col-md-9 col-lg-9 table-responsive"> 
+                    <form editable-form
+				        name="editableForm"
+				        onaftersave="vm.saveUser()">
+					<table class="table table-hover">
+						<tr>
+							<td style="padding-top: 15px;"><span class="title">Full Name </span></td>
+							<td><span editable-text="vm.user.firstName+' '+vm.user.lastName"
+						            e-name="name" e-class="form-control" 
+						            onbeforesave="vm.checkFullName($data)"
+						            e-required>
+						        {{ vm.user.firstName+' '+vm.user.lastName || '' }}
+						      </span>
+						    </td>
+						</tr>
+						<tr>
+							<td style="padding-top: 15px;"><span class="title">Display Name </span></td>
+							<td><span editable-text="vm.user.firstName"
+						            e-name="name" e-class="form-control" 
+						            onbeforesave="vm.checkDisplayName($data)"
+						            e-required>
+						        {{ vm.user.firstName || '' }}
+						      </span>
+						    </td>
+						</tr>
+						<tr>
+							<td style="padding-top: 15px;"><span class="title">Mobile </span></td>
+							<td><span editable-text="vm.user.mobileNo"
+						            e-name="mobileNo" e-class="form-control" 
+						            onbeforesave="vm.checkMobileNo($data)"
+						            e-required>
+						        {{ vm.user.mobileNo || '' }}
+						      </span>
+						   	</td>
+						</tr>
+						<tr>
+							<td style="padding-top: 15px;"><span class="title">Email Id </span></td>
+							<td>
+						        {{ vm.user.emailId || '' }}
+						    </td>
+						</tr>
+					</table>
+				    <div class="form-group">
+				      <button type="button"
+				              class="btn btn-success"
+				              ng-click="editableForm.$show()"
+				              ng-show="!editableForm.$visible">
+				        Edit
+				      </button>
+				      <span ng-show="editableForm.$visible">
+				        <button type="submit"
+				                class="btn btn-primary"
+				                ng-disabled="!editableForm.$dirty">
+				          Save
+				        </button>
+				        <button type="button"
+				                class="btn btn-default"
+				                ng-disabled="editableForm.$waiting"
+				                ng-click="editableForm.$cancel();vm.resetImg();">
+				          Cancel
+				        </button>
+				      </span>
+				    </div>
+				
+				  </form>
+                 </div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="vm.close()">Close</button>
+	</div>
+</div>

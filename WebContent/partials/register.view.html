@@ -1,0 +1,112 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AVOM CONSULTING</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+           <div class="dropdown navbar-form navbar-right">
+              
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                  <li><a href="#/register">Talent</a></li>
+			          <li><a href="#/register?type=con">Consultancy</a></li>
+			          <li><a href="#/register?type=com">Company</a></li>
+			          <li class="divider"></li>
+			          <li><a href="#/register?type=admin">Admin</a></li>
+	              </ul>
+            
+          </div>
+         </div>
+         
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+     <br><br>
+
+
+
+
+<div class="top-content">       	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Register</strong></h1>
+                            <div class="description">
+                            	<p>
+	                            	AVOM Consulting welcomes you.
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	
+                            <div class="form-bottom">
+			                    <form role="form" name="registerForm" class="login-form" ng-submit="vmr.register()">
+									
+									
+									<div class="row" >
+				                    	<div class="form-group col-xs-6">
+				                    		<label class="sr-only" for="userfname">First Name</label>
+				                        	<input type="text" name="userfname" placeholder="First Name" class="form-username form-control" id="userfname" ng-model="vmr.newuser.firstName" required>
+				                        	<span ng-show="registerForm.userfname.$touched && registerForm.userfname.$invalid"><font color="red" >*First Name is required.</font></span>
+				                        </div>
+				                        <div class="form-group col-xs-6">	
+				                        	<label class="sr-only" for="userlname">Last Name</label>
+				                        	<input type="text" name="userlname" placeholder="Last Name" class="form-username form-control" id="userlname" ng-model="vmr.newuser.lastName" required>
+				                        	<span ng-show="registerForm.userlname.$touched && registerForm.userlname.$invalid"><font color="red" >*Last Name is required.</font></span>
+				                        </div>
+			                        </div>
+								<!-- <p>Enter Email ID</p> -->	
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="useremail">Email ID</label>
+			                        	<input type="text" name="useremail" placeholder="Email ID" class="form-username form-control" id="useremail" ng-model="vmr.newuser.email" required>
+			                        	<span ng-show="registerForm.useremail.$touched && registerForm.useremail.$invalid"><font color=red >*Email is required.</font></span>
+			                        </div>
+			                        
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Password</label>
+			                        	<input type="password" name="form-password" placeholder="Choose Password" class="form-password form-control" id="form-password" ng-model="vmr.newuser.password" required>
+			                        	<span ng-show="registerForm.form-password.$touched && registerForm.form-password.$invalid"><font color=red >*Enter password.</font></span>
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-repassword">Re-enter Password</label>
+			                        	<input type="password" name="form-repassword" placeholder="Re-enter Password" class="form-password form-control" id="form-repassword" required>
+			                        	<span ng-show="registerForm.form-repassword.$touched && registerForm.form-repassword.$invalid"><font color=red >*Plese re-enter password.</font></span>
+			                        </div>
+			                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" >Sign Up</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<h3>or login with:</h3>
+                        	<div class="social-login-buttons">
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-facebook"></i> Facebook
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-twitter"></i> Twitter
+	                        	</a>
+	                        	<a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-google-plus"></i> Google Plus
+	                        	</a>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>

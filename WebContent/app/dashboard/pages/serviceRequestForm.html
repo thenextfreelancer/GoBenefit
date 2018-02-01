@@ -1,0 +1,52 @@
+<div class="usrservicerequest-view">
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Service Request</h3>
+	</div>
+	<div class="modal-body">
+           <form name="serviceRequestForm" id="serviceRequestForm"  novalidate>
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Choose Service</label>
+                       <select ng-model="vmc.facilityCode" class="form-control" id="facility">
+					    <option ng-repeat="facility in vmc.facilities" ng-selected="facility.code === vmc.facilityCode" value="{{facility.code}}">
+					        {{facility.name}}
+					    </option>
+                       </select>
+                       <p class="help-block"></p>
+                   </div>
+               </div>
+               <div class="control-group form-group" ng-show="vmc.flats.length>1">
+                   <div class="controls">
+                       <label>Choose Flat</label>
+                       <select ng-model="vmc.flatId" class="form-control" id="flat">
+					    <option ng-repeat="flat in vmc.flats" ng-selected="flat.id === vmc.flatId" value="{{flat.id}}">
+					        {{flat.flatNumber}}
+					    </option>
+                       </select>
+                       <p class="help-block"></p>
+                   </div>
+               </div>
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Subject</label>
+                       <input type="text" class="form-control" id="subject" ng-model="vmc.subject" required data-validation-required-message="Please enter subject.">
+                   </div>
+               </div>
+               <div class="control-group form-group">
+                   <div class="controls">
+                       <label>Message</label>
+                       <textarea rows="10" cols="100" class="form-control" id="message" ng-model="vmc.message" required data-validation-required-message="Please detailed request." maxlength="999" style="resize:none"></textarea>
+                   </div>
+               </div>
+               <div id="success"></div>
+               <!-- For success/fail messages -->
+               
+           </form>
+       </div>
+       <div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="vmc.close()">Close</button>
+		<button type="submit" class="btn btn-primary" ng-click="vmc.requestService()" >Submit Request</button>
+	</div>
+     </div>
+</div>

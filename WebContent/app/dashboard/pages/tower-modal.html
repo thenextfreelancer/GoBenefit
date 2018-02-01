@@ -1,0 +1,33 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Add Tower</h3>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-lg-6">
+				<form role="form" style="width:450px;margin-left:50px;">
+					<div class="form-group">
+						<label>Name</label>
+						<input ng-model="vm.data.name" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Flat Prefix</label>
+						<input ng-model="vm.data.flatPrefix" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Flat Count</label>
+						<input ng-model="vm.data.flatCount" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Floors</label>
+						<input ng-model="vm.data.totalFloor" class="form-control" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+	</div>
+</div>

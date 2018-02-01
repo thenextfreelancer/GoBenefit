@@ -1,0 +1,54 @@
+<div class="login-view">
+	<div cg-busy="{promise:loadingA,message:'Loading apartments...',backdrop:true,templateUrl:'common/tpl/loading.html'}"></div>
+	<div cg-busy="{promise:loadingT,message:'Loading towers...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+	<div cg-busy="{promise:loadingF,message:'Loading flats...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+	<div cg-busy="{promise:loadingP,message:'Please wait...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+	<div class="top-content">       	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                            <div class="form-top">
+                        		<div class="form-top-left">
+                        			<h2><strong>Registration: Step 2</strong></h2>                           		
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" name="registerForm" class="login-form" ng-submit="vm.update()">
+			                        <div class="form-group">
+                                        <label>Select Your Apartment</label>
+                                        <select ng-model="vm.userapartment" class="form-control" id="userapartment" data-ng-change="vm.getTowers()">
+										    <option ng-repeat="apt in vm.aptList" ng-selected="apt.id === vm.userapartment" value="{{apt.id}}">
+										        {{apt.name}}
+										    </option>
+					                    </select>
+                                        <span ng-show="registerForm.userapartment.$touched && registerForm.userapartment.$invalid"><font color=red >*Select your apartment.</font></span>
+                                    </div>
+                                    <div class="form-group" ng-show="vm.towerList.length">
+                                        <label>Select Your Tower</label>
+                                        <select ng-model="vm.usertower" class="form-control" id="usertower" data-ng-change="vm.getFlats()">
+										    <option ng-repeat="tower in vm.towerList" ng-selected="tower.id === vm.usertower" value="{{tower.id}}">
+										        {{tower.name}}
+										    </option>
+					                    </select>
+                                        <span ng-show="registerForm.usertower.$touched && registerForm.usertower.$invalid"><font color=red >*Select your tower.</font></span>
+                                    </div>
+                                    <div class="form-group" ng-show="vm.flatList.length">
+                                        <label>Select Your Flat</label>
+                                        <select ng-model="vm.userflat" class="form-control" id="userflat">
+										    <option ng-repeat="flat in vm.flatList" ng-selected="flat.id == vm.userflat" value="{{flat.id}}">
+										        {{flat.name}}
+										    </option>
+					                    </select>
+                                        <span ng-show="registerForm.userflat.$touched && registerForm.userflat.$invalid"><font color=red >*Select your flat.</font></span>
+                                    </div>
+			                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" >Sign Up</button>
+			                    </form>
+		                    </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+</div>

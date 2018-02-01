@@ -1,0 +1,142 @@
+<div class="flat-configure">
+<div cg-busy="{promise:loading,message:'Loading...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+<div id="wrapper">
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<uib-tabset active="active"> 
+					<uib-tab index="0" heading="My Booking Requests"> 
+						<div class="usrservice-view">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<div class="row">
+												<div class="col-md-7">												
+												</div>
+												<div class="col-md-5" >
+													<div class="row">
+														<div class="col-md-10" >
+															<form style="margin: -5px -25px -5px 0px;">
+															    <div class="form-group" style="margin-bottom: 0px;">
+															      <div class="input-group">
+															        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+															        <input type="text" class="form-control" placeholder="Search Request..." ng-model="searchRequestAdmin">
+															      </div>      
+															    </div>
+													  		</form>
+													  	</div>
+													  	<div class="col-md-2" >
+															<button type="button" class="btn btn-primary" uib-tooltip="Request New Booking" style="margin: -5px -25px -5px 0px;" ng-click="vm.openRequestForm()"><i class="fa fa-plus"></i></button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /.panel-heading -->
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-lg-4" style="width: 100%;">
+													<div class="table-responsive">
+														<table class="table table-bordered table-hover table-striped">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>Booking Type</th>
+																	<th>Event Info</th>
+																	<th>Status</th>
+																	<th></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-repeat="booking in vm.bookingListAdmin | filter:searchRequestAdmin">
+																	<td class="col-md-1">{{$index+1}}</td>
+																	<td class="col-md-2">{{booking.apartmentFacility.name}}</td>
+																	<td class="col-md-6">{{booking.subject}}</td>
+																	<td class="col-md-2">{{booking.status}}</td>
+																	<td class="col-md-1" align="center"><button uib-tooltip="View Details" class="btn btn-primary grid-btn-margin" ng-click="vm.showBookingDetails(booking.id)"><i class="fa fa-list" aria-hidden="true"></i></button></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+													<!-- /.table-responsive -->
+												</div>
+												<div ng-show="!vm.bookingListAdmin" align="center">No Booking Request.</div>
+											</div>
+											<!-- /.row -->
+										</div>
+										<!-- /.panel-body -->
+									</div>
+								</div>
+								<!-- /.col-lg-8 -->
+							</div>
+						</div>
+					</uib-tab> 
+					<uib-tab index="1" heading="Pending Booking Requests"> 
+						<div class="usrservice-view">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<div class="row">
+												<div class="col-md-7">												
+												</div>
+												<div class="col-md-5" >
+													<div class="row">
+														<div class="col-md-2" >
+														</div>
+														<div class="col-md-10" >
+															<form style="margin-top: -5px;">
+															    <div class="form-group" style="margin-bottom: 0px;">
+															      <div class="input-group">
+															        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+															        <input type="text" class="form-control" placeholder="Search Request..." ng-model="searchRequest">
+															      </div>      
+															    </div>
+													  		</form>
+													  	</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /.panel-heading -->
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-lg-4" style="width: 100%;">
+													<div class="table-responsive">
+														<table class="table table-bordered table-hover table-striped">
+															<thead>
+																<tr>
+																	<th>#</th>
+																	<th>Booking Type</th>
+																	<th>Event Info</th>
+																	<th>Status</th>
+																	<th></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-repeat="booking in vm.bookingList | filter:searchRequest">
+																	<td class="col-md-1">{{$index+1}}</td>
+																	<td class="col-md-2">{{booking.apartmentFacility.name}}</td>
+																	<td class="col-md-6">{{booking.subject}}</td>
+																	<td class="col-md-2">{{booking.status}}</td>
+																	<td class="col-md-1" align="center"><button uib-tooltip="View Details" class="btn btn-primary grid-btn-margin" ng-click="vm.showBookingDetails(booking.id)"><i class="fa fa-list" aria-hidden="true"></i></button></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<div ng-show="!vm.bookingList" align="center">No Booking Request.</div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					</uib-tab> 
+				</uib-tabset>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="home-view" ui-view>
+<div class="top-content" ng-controller="HomeController" >
+		<div class="container">
+			<div class="row">
+				<div class="form-box">
+					<div class="form-bottom">
+						<form role="form" class="search-form" ng-submit="vmh.search()">
+							<div class="form-group">
+								<input type="text" name="search" id="search" placeholder="Search your society..."
+									class="form-control input-lg" autocomplete="off" ng-model="vmh.searchData" uib-typeahead="state for state in vmh.lookup($viewValue)" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		<div class="search-result" ng-show="vmh.searchData.length">
+			<hgroup class="mb20">
+				<h1>Search Results</h1>
+				<h2 class="lead">
+					<strong class="text-danger">{{vmh.appartmentInfo.length}}</strong> results were found for the
+					search for <strong class="text-danger">{{vmh.searchData}}</strong>
+				</h2>
+			</hgroup>
+
+			<section class="col-xs-12 col-sm-6 col-md-12" >
+				<article class="search-result row" ng-repeat="apartment in vmh.appartmentInfo">
+					<div class="col-xs-12 col-sm-12 col-md-3">
+						<a href="#" title="{{apartment.name}}" class="thumbnail">
+						<img src="assets/img/society/soc1.jpg" alt="{{apartment.name}}" class="img-circle"/></a>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-9">
+						<div class="row">
+							<h3>
+								<a ui-sref=".services({ apartment: {{apartment}}})" title="">{{apartment.name}}</a>
+							</h3>
+						</div>
+						<div class="row">
+							<p>{{apartment.address.address}} {{apartment.address.cityCode}} {{apartment.address.stateCode}} {{apartment.address.pinCode}} {{apartment.address.countryCode}}</p>
+						</div>
+					</div>
+					<span class="clearfix border" ng-if="vmh.searchData.length > 0"></span>
+				</article>
+			</section>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,90 @@
+<div class="simpleDemo">
+<div cg-busy="{promise:loading,message:'Loading...',backdrop:false,templateUrl:'common/tpl/loading.html'}"></div>
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="panel panel-info servicelistclass">
+				<div class="panel-heading">
+                       <h3 class="panel-title">Selected Service List</h3>
+                       <div class="pull-right">
+							<button type="button" class="btn btn-default" style="margin-top: -40px;" ng-click="showBox = !showBox">
+							<span ng-show="!showBox">Add Services</span>
+							<span ng-show="showBox">Finish</span>
+							</button>
+						</div>
+                   </div>
+                   <div class="panel-body">
+				<div ng-repeat="service in vm.savedFacilities">
+					<div class="clearfix" ng-if="$index % 3 == 0"></div>
+		            <div class="col-md-4">
+		                <div class="media">
+		                    <div class="pull-left">
+		                        <span class="fa-stack fa-2x">
+		                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+		                              <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+		                        </span> 
+		                    </div>
+		                    <div class="media-body">
+		                        <h4 class="media-heading" style="margin-top: 15px;">{{service.name}}</h4>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        </div>
+			</div>
+			<div class="panel panel-info" ng-show="showBox">
+				<div class="panel-heading">
+                    <h3 class="panel-title">Select Services</h3>
+                </div>
+                <div class="panel-body">
+                <h3>Drag and drop services you want to choose.</h3>
+				<div class="row">
+					<div class="col-md-5">
+						<div class="panel panel-info">
+		                    <div class="panel-heading">
+		                        <h3 class="panel-title">Available Services</h3>
+		                    </div>
+		                     <div class="panel-body">
+								<ul dnd-list="vm.models.lists.allFacilities">
+									<li ng-repeat="item in vm.models.lists.allFacilities" dnd-draggable="item"
+										dnd-moved="vm.models.lists.allFacilities.splice($index, 1)" dnd-effect-allowed="move"
+										dnd-selected="vm.models.lists.allFacilities.selected = item"
+										ng-class="{'selected': vm.models.lists.allFacilities.selected === item}">
+										
+										<span><i class="fa fa-cogs"></i> {{item.name}}</span>
+									</li>
+								</ul>
+							  </div>
+						  </div>
+					  </div>
+					   <div class="col-md-2">
+ 					    <div class="row">
+							<button type="button" class="btn btn-warning" style="margin: 120px 2px 2px 2px; width:100%;" ng-click="vm.moveAllItems()"><i class="fa fa-angle-double-right"></i></button>
+							<button type="button" class="btn btn-warning" style="margin: 10px 2px 2px 2px; width:100%;" ng-click="vm.removeAllItems()"><i class="fa fa-angle-double-left"></i></button>
+						</div>
+					   </div>
+					  <div class="col-md-5">
+					  	<div class="panel panel-info">
+	                    <div class="panel-heading">
+	                        <h3 class="panel-title">Selected Services</h3>
+	                    </div>
+	                     <div class="panel-body">
+	                     	<ul dnd-list="vm.models.lists.apptFacilities">
+								<li ng-repeat="item in vm.models.lists.apptFacilities" dnd-draggable="item"
+									dnd-moved="vm.models.lists.apptFacilities.splice($index, 1)" dnd-effect-allowed="move"
+									dnd-selected="vm.models.lists.apptFacilities.selected = item"
+									ng-class="{'selected': vm.models.lists.apptFacilities.selected === item}">
+									<span><i class="fa fa-cogs"></i> {{item.name}}</span></li>
+							</ul>
+	                     </div>
+	                    </div>
+					  </div>
+					  
+					</div>
+					<div class="row" align="center">
+						<button type="button" class="btn btn-success" style="margin-top:20px; width:70%;" ng-click="vm.assignFacilities()">Save</button>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

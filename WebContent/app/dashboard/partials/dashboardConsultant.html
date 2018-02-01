@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="myApp">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Avom Consulting</title>
+	
+	 <!-- CSS -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+	
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- Favicon and touch icons -->
+	<link rel="shortcut icon" href="assets/ico/favicon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+	</head>
+<body class="bg-info" ng-controller="jobsController">
+		<!-- Libraries -->
+	<script src="../js/angular.js"></script>
+	<script src="../js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+	<script src="../js/angular-route.min.js"></script>
+	<script src="../js/angular-animate.min.js"></script>
+	<script src="../js/angular-ngcookies.js"></script>
+	
+	<!-- Some Bootstrap Helper Libraries -->
+
+	<script src="../assets/js/jquery-1.11.1.min.js"></script>
+	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../assets/js/jquery.backstretch.min.js"></script>
+	<script src="../assets/js/scripts.js"></script>
+	<!--[if lt IE 10]>
+        <script src="assets/js/placeholder.js"></script>
+    <![endif]-->	
+    
+	<!-- AngularJS custom codes -->
+	
+	<!-- Directives -->
+	<!-- script src="app/directives/directives.js"></script-->
+	
+	<!-- App -->
+	<script src="app/app.js"></script>
+	
+	<!-- Services -->
+	<script src="../app/services/auth.service.js"></script>
+	<script src="../app/services/flash.service.js"></script>
+	<script src="../app/services/users.service.js"></script>
+	
+	<!-- Controllers -->
+	<script src="../app/controllers/register.ctrl.js"></script>
+	<script src="../app/controllers/login.ctrl.js"></script>
+	<script src="../app/controllers/home.ctrl.js"></script>
+	<script src="../app/controllers/profile.ctrl.js"></script>
+	<script src="../app/controllers/consultanthome.ctrl.js"></script>
+
+	
+	
+	
+	<div class="container">
+		<div class="col-md-1"></div>
+		<div class="col-md-10" style="background-color:white;">
+			
+				<pre><h2>Agency Portal</h2></pre>
+				<ul class="nav nav-pills nav-justified">
+				  <li class="active"><a data-toggle="tab" href="#home">Jobs</a></li>
+				  <li><a data-toggle="tab" href="#menu1">Clients</a></li>
+				  <li><a data-toggle="tab" href="#menu2">Candidates</a></li>
+				</ul>
+				
+				<div class="tab-content">
+				  <div id="home" class="tab-pane fade in active">
+				    <table class="table table-bordered">
+				    	<tr>
+				    		<th>Jobs</th>
+				    		<th>Submitted</th>
+				    		<th>Hired</th>
+				    		<th>Active</th>
+				    		<th>Clients</th>
+				    	</tr>
+				    	<tr ng-repeat="x in jobs">
+				    	   <td>{{x.job}}</td>
+				    	   <td>{{x.submitted}}</td>
+				    	   <td>{{x.hired}}</td>
+				    	   <td>{{x.active}}</td>
+				    	   <td>{{x.client}}</td>
+				    	</tr>
+				    </table>
+				  </div>
+				  <div id="menu1" class="tab-pane fade">
+				   <table class="table table-bordered">
+				    	<tr>
+				    		<th>Clients</th>
+				    		<th>Jobs</th>
+				    		<th>Submitted</th>
+				    		<th>Active</th>
+				    		<th>Hired</th>
+				    	</tr>
+				    	<tr ng-repeat="x in clients">
+				    	   <td>{{x.client}}</td>
+				    	   <td>{{x.jobs}}</td>
+				    	   <td>{{x.submitted}}</td>
+				    	   <td>{{x.hired}}</td>
+				    	   <td>{{x.active}}</td>
+				    	</tr>
+				    </table>
+				  </div>
+				  <div id="menu2" class="tab-pane fade">
+				    <h3>Menu 2</h3>
+				    <p>Some content in menu 2.</p>
+				  </div>
+				
+			</div>
+			</div>
+		<div class="col-md-1"></div>
+	</div>	
+</body>
+</html>

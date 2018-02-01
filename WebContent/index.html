@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GO BENEFIT</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link rel="stylesheet" href="assets/css/modern-business.css" />
+	<link rel="stylesheet" href="assets/css/xeditable.min.css" />
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-datepicker3.css"/>
+	
+	<!-- Timeline CSS -->
+	<link href="assets/css/timeline.css" rel="stylesheet">
+	
+	<!-- MetisMenu CSS -->
+	<link href="assets/css/metisMenu.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="assets/css/sb-admin-2.css" rel="stylesheet">
+	<link href="assets/css/angular-busy.min.css" rel="stylesheet">
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-cloak="">
+	<div ui-view="header"></div>
+	<div ui-view="content"></div>
+	<div ui-view></div>
+
+	<!-- Libraries -->
+	<script src="assets/js/angular.js"></script>
+	<script src="assets/js/ui-bootstrap-tpls-0.14.0.min.js"></script>
+	<script src="assets/js/angular-route.min.js"></script>
+	<script src="assets/js/angular-animate.min.js"></script>
+	<script src="assets/js/angular-ngcookies.js"></script>
+	<script src="assets/js/angular-ui-router.js"></script>
+	<script src="assets/js/angular-ui-router-statehelper.js"></script>
+	<script src="assets/js/angular-drag-and-drop-lists.min.js"></script>
+	
+	<!-- Some Bootstrap Helper Libraries -->
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/xeditable.min.js"></script>
+	<script src="assets/js/bootstrap-datepicker.min.js"></script>
+	
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="assets/js/metisMenu.min.js"></script>
+
+	<!--[if lt IE 10]>
+        <script src="assets/js/placeholder.js"></script>
+    <![endif]-->
+	<script src="assets/js/jqBootstrapValidation.js"></script>
+	<script src="assets/js/contact_me.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="assets/js/sb-admin-2.js"></script>
+	<script src="assets/js/angular-busy.min.js"></script>
+	<!-- AngularJS Application Code-->
+
+	<!-- App -->
+	<script src="app.js"></script>
+
+	<!-- App Constants -->
+	<script src="common/Constants.js"></script>
+	
+	<!-- Services -->
+	<script src="common/services/auth.service.js"></script>
+	<script src="common/services/appModal.service.js"></script>
+	<script src="common/services/users.service.js"></script>
+	<script src="app/header/header.service.js"></script>
+	<script src="app/footer/footer.service.js"></script>
+	<script src="app/home/lookup.service.js"></script>
+	<script src="app/dashboard/services/clubService.js"></script>
+	<script src="app/dashboard/services/towerService.js"></script>
+	<script src="app/dashboard/services/facilitiesService.js"></script>
+	<script src="app/dashboard/services/userService.js"></script>
+	<script src="app/dashboard/services/flatService.js"></script>
+	<script src="app/dashboard/services/fileUploadService.js"></script>
+	<script src="app/dashboard/services/apartmentService.js"></script>
+	<script src="app/dashboard/services/userRequestService.js"></script>
+	
+	<!-- Controllers -->
+	<script src="app/register/register.ctrl.js"></script>
+	<script src="app/register/register-advance.ctrl.js"></script>
+	<script src="app/login/login.ctrl.js"></script>
+	<script src="app/home/home.ctrl.js"></script>
+	<script src="app/dashboard/controllers/profile.ctrl.js"></script>
+	<script src="app/header/header.ctrl.js"></script>
+	<script src="app/footer/footer.ctrl.js"></script>
+	<script src="app/about/about.ctrl.js"></script>
+	<script src="app/contact/contact.ctrl.js"></script>
+	<script src="app/services/services.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userdashboard.ctrl.js"></script>
+	<script src="app/dashboard/controllers/admindashboard.ctrl.js"></script>
+	<script src="app/dashboard/controllers/club.ctrl.js"></script>
+	<script src="app/dashboard/controllers/clubmodal.ctrl.js"></script>
+	<script src="app/dashboard/controllers/tower.ctrl.js"></script>
+	<script src="app/dashboard/controllers/towermodal.ctrl.js"></script>
+	<script src="app/dashboard/controllers/serviceselector.ctrl.js"></script>
+	<script src="app/dashboard/controllers/users.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userupload.ctrl.js"></script>
+	<script src="app/dashboard/controllers/predashboard.ctrl.js"></script>
+	<script src="app/dashboard/controllers/commondashboard.ctrl.js"></script>
+	<script src="app/dashboard/controllers/flatview.ctrl.js"></script>
+	<script src="app/dashboard/controllers/flatconfigure.ctrl.js"></script>
+	<script src="app/dashboard/controllers/selectappt.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userServiceRequest.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userBookingRequest.ctrl.js"></script>
+	<script src="app/dashboard/controllers/service-request-form.ctrl.js"></script>
+	<script src="app/dashboard/controllers/service-request-details.ctrl.js"></script>
+	<script src="app/dashboard/controllers/bookingRequestForm.ctrl.js"></script>
+	<script src="app/dashboard/controllers/bookingRequestDetails.ctrl.js"></script>
+	<script src="app/dashboard/controllers/dashboardHeader.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userSettings.ctrl.js"></script>
+	<script src="app/dashboard/controllers/userProfile.ctrl.js"></script>
+	<script src="app/dashboard/controllers/serviceRequestListAdmin.ctrl.js"></script>
+	<script src="app/dashboard/controllers/bookingRequestListAdmin.ctrl.js"></script>
+	
+	<!-- Directives -->
+	<script src="common/directives/directives.js"></script>
+
+</body>
+</html>

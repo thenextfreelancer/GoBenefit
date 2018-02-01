@@ -1,0 +1,25 @@
+{
+  "name": "gobenefit",
+  "version": "1.0.0",
+  "description": "gobenefit",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Moksh_Dev@bitbucket.org/rahulsingh1991/profit.git"
+  },
+  "author": "arpit",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rahulsingh1991/profit#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-requirejs": "^1.1.0",
+    "requirejs": "^2.3.2"
+  }
+}

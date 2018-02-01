@@ -1,0 +1,17 @@
+<div class="predashboard-view">
+	<div cg-busy="{promise:loading,message:'Loading...',backdrop:true,templateUrl:'common/tpl/loading.html'}"></div>
+	<div class="modal-body">
+		<div class="btn-group">
+			<button type="button" data-toggle="dropdown"
+				class="btn btn-info dropdown-toggle fullwidth">
+				Select Apartment <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu fullwidth">
+				<li ng-repeat="apt in apartments">
+					<!-- <a href="#/usrdashboard" ng-click="loadApt(apt)">{{apt.name}}</a> -->
+					<a href="#/" ng-click="loadApt(apt)"><img src="assets/img/defaultAppt.jpg" class="img-circle" height="40" width="40" alt="usr" /> &nbsp; &nbsp;{{apt.name}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

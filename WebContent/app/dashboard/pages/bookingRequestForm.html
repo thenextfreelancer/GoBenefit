@@ -1,0 +1,81 @@
+<div class="usrbookingrequest-view">
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Booking Request</h3>
+	</div>
+	<div class="modal-body">
+	<div class="bootstrap-iso">
+       <form name="bookingRequestForm" id="bookingRequestForm" novalidate>
+           <div class="controls">
+               <label>Choose Facility</label>
+               <select ng-model="vm.facilityCode" class="form-control" id="facility">
+				 <option ng-repeat="facility in vm.facilities" ng-selected="facility.code == vm.facilityCode" value="{{facility.code}}">
+				     {{facility.name}}
+				 </option>
+               </select>
+               <p class="help-block"></p>
+           </div>
+           <div class="control-group form-group" ng-show="vm.flats.length>1">
+               <div class="controls">
+                   <label>Choose Flat</label>
+                   <select ng-model="vm.flatId" class="form-control" id="flat">
+				    <option ng-repeat="flat in vm.flats" ng-selected="flat.id === vm.flatId" value="{{flat.id}}">
+				        {{flat.flatNumber}}
+				    </option>
+                   </select>
+                   <p class="help-block"></p>
+               </div>
+           </div>
+           <div class="control-group form-group">
+               <div class="controls">
+                   <label>Describe Event</label>
+                   <input type="text" ng-model="vm.subject" class="form-control" id="bookingevent" required data-validation-required-message="Please enter subject.">
+               </div>
+           </div>
+           <div class="control-group form-group">
+               <div class="controls">
+                   <label>From</label>
+                   <div class="input-group">
+                   		<div class="col-md-8">
+                   			<mydatepicker ng-model="vm.frombdate" date-options="vm.dateOptionsFrom" opened="vm.openedFrom"/>
+                   		</div>
+				        <div class="col-md-4">
+				        	<select ng-model="vm.fromTime" class="form-control" id="fromTime">
+							 <option ng-repeat="period in vm.periodList" ng-selected="period === vm.fromTime" value="{{period}}">
+							     {{period}}
+							 </option>
+			                </select>
+				        </div>     
+				    </div>
+               </div>
+               <div class="controls">
+                   <label>To</label>
+                   <div class="input-group">
+                   	<div class="col-md-8">
+				        <mydatepicker ng-model="vm.tobdate" date-options="vm.dateOptionsTo" opened="vm.openedTo"/>
+				     </div>
+				       <div class="col-md-4">
+				        <select ng-model="vm.toTime" class="form-control" id="toTime">
+						 <option ng-repeat="period in vm.periodList" ng-selected="period === vm.toTime" value="{{period}}">
+						     {{period}}
+						 </option>
+		                </select>
+		               </div>
+				    </div>
+               </div>
+           </div>
+           <div class="control-group form-group">
+               <div class="controls">
+                   <label>Note</label>
+                   <textarea rows="5" cols="100" class="form-control" ng-model="vm.description" id="bookingdesc" required data-validation-required-message="Please detailed request." maxlength="999" style="resize:none"></textarea>
+               </div>
+           </div>
+        </form>
+        </div>
+       </div>
+       <div class="modal-footer">
+		<button class="btn btn-warning" type="button" ng-click="vm.close()">Close</button>
+		<button type="submit" class="btn btn-primary" ng-click="vm.requestBooking()" >Submit Request</button>
+	</div>
+   </div>
+</div>

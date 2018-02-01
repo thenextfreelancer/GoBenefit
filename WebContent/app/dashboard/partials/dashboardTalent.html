@@ -1,0 +1,413 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">AVOM</a>
+      	  </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+           <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+           	        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="glyphicon glyphicon-user"></span> Asheesh Singh <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-globe"></span> Notifications</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+         
+        </div><!--/.nav-collapse -->
+      
+    </nav>
+     <br><br><br>
+
+ <body>
+    <div class="row">
+    <div class="col-md-2"></div>
+  	<div class="col-md-7" style="text-align:left;">
+   	          <div class="panel panel-primary">
+				      <div class="panel-heading">
+				        <h4 class="panel-title">
+				          Profile
+				        </h4>
+				      </div>
+			      	  <div id="collapse1" class="panel-collapse collapse in">
+				        <div class="panel-body">
+					    	<div  style="padding-right:40px;" class="col-md-12">
+						    	<kbd>Asheesh Singh</kbd>
+						    	<div class="pull-right"><button type="button" class="btn-link" ng-click="pc.edit(true)">Edit Profile</a></button>
+						    </div>
+						    <div ng-hide="pc.editProfile">
+							  	<div class="col-md-6">
+								  	<div><small class="text-muted">Current Designation</small> : {{pc.user.designation}}</div>
+								  	<div><small class="text-muted">Current Company:</small> {{pc.user.currCompany}}</div>
+								  	<div><small class="text-muted">Current Location:</small> {{pc.user.currLocation}}</div>
+								  	<div><small class="text-muted">Preferred Location:</small> {{pc.user.preferredLocation}}</div>
+								  	<div><small class="text-muted">Functional Area:</small> IT Software - Application Programming / Maintenance</div>
+								  	<div><small class="text-muted">Role:</small> {{pc.user.role}}</div>
+								  	<div><small class="text-muted">Industry:</small>{{pc.user.industry}}</div>
+								  	<div><small class="text-muted">Date of Birth:</small>{{pc.user.dob}}</div>
+								  	<div><small class="text-muted">Gender:</small> {{pc.user.gender}} </div>
+							  	</div>
+							  	<div class="col-md-6">
+							  		<div><small class="text-muted">Total Experience:</small>{{pc.user.totalExp}}</div>
+			    					<div><small class="text-muted">Annual Salary:</small> {{pc.user.annualSalary}}</div>
+			    					<div><small class="text-muted">Highest Degree:</small> {{pc.user.highestDegree}}</div>
+			    					<div><small class="text-muted">Phone:</small> {{pc.user.phone}}</div>
+			    					<div><small class="text-muted">Email:</small> {{pc.user.email}}</div>
+			    					<div><small class="text-muted">Permanent Address:</small> {{pc.user.permanantAddress}}</div>
+			    					<div><small class="text-muted">Hometown/City:</small> {{pc.user.homeTown}}</div>
+			    					<div><small class="text-muted">Pin Code:</small>{{pc.user.pin}}</div>
+			    					<div><small class="text-muted">Marital Status:</small> {{pc.user.maritalStatus}}</div>
+							  	</div>
+							 </div> 	
+						  	 <div ng-show="pc.editProfile">
+						  	 	<div class="row">
+						    		<div class="col-md-6">
+									    <div class="form-group">
+									    	 <label for="email">Current Designation:</label>
+										    <input id="email" class="form-control" placeholder="Email" required="required" maxlength="100" type="text" name="email" value="">
+										    
+							        	</div>
+							        	<div class="form-group">
+										    <label for="email">Current Company:</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Current Company" valus="{{pc.user.currCompany}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Current Location:</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Current Location" value="{{pc.user.currLocation}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Preferred Location :</label>
+										    <input type="text" name="appUser.name"  class="form-control input-sm" placeholder="Preferred Location" value="{{pc.user.preferredLocation}}"/>
+							        	</div>
+							        	<div class="form-group">
+										    <label for="email">Functional Area :</label>
+										    <input type="text" name="appUser.name" id="appUser.designation" class="form-control input-sm" placeholder="Functional Area"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Role :</label>
+										    <input type="text" name="appUser.name" id="appUser.designation" class="form-control input-sm" placeholder="Role" value="{{pc.user.role}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Industry :</label>
+										    <input type="text" name="appUser.name" id="appUser.designation" class="form-control input-sm" placeholder="Industry" value="{{pc.user.industry}}"/>
+							        	</div>	
+							        	<div class="form-group">
+							        		<label for="email">Date of Birth :</label>
+										    <input type="text" name="toDate" id="toDate"  value="" class="datepicker form-control" style="width:130px" placeholder="dd/mm/yyyy"/ title="Select Date">
+										    <input type="text" name="appUser.name" id="appUser.designation" class="form-control input-sm" placeholder="Date of Birth" vlaue="{{pc.user.dob}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Gender :</label>
+							        		<select ng-model="gender" ng-options="gender for gender in pc.genderList" class="form-control input-sm">
+						    					<option value=''>Select</option>
+						    				</select>
+										</div>							    		
+									</div>
+								  	<div class="col-md-6">
+								  		<div class="form-group">
+								  			<label for="email">Total Experience :</label>
+								  			<div class="row">
+								  			<div class="col-md-6">
+								    				<select ng-model="expYear" ng-options="year for year in pc.expYears" class="form-control input-sm">
+								    					<option value=''>Years</option>
+								    				</select>
+								    			 </div>	
+								    		    <div class="col-md-6"> 	
+								    				<select ng-model="toYear" ng-options="month for month in pc.expMonths" class="form-control input-sm">
+								    					<option value=''>Months</option>
+								    				</select>
+								    			</div>	
+										    </div>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Annual Salary :</label>
+										    <div class="row">
+								  			<div class="col-md-6">
+								    				<select ng-model="salaryLacs" ng-options="salary for salary in pc.salaryLacs" class="form-control input-sm">
+								    					<option value=''>Lacs</option>
+								    				</select>
+								    			 </div>	
+								    		    <div class="col-md-6"> 	
+								    				<select ng-model="salaryThousands" ng-options="salary for salary in pc.salaryThousands" class="form-control input-sm">
+								    					<option value=''>Thousands</option>
+								    				</select>
+								    			</div>	
+										    </div>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Phone :</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Phone" value="{{pc.user.phone}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Email :</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Email" value="{{pc.user.email}}"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Permanent Address :</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Permanent Address" value="{{pc.user.permanantAddress}}"/>
+							        	</div>
+							        	<div class="form-group">
+										    <label for="email">Hometown/City :</label>
+										    <input type="text" name="appUser.name" class="form-control input-sm" placeholder="Hometown/City"/>
+							        	</div>	
+							        	<div class="form-group">
+							        		<label for="email">Pin :</label>
+										    <input type="text" name="appUser.name"  class="form-control input-sm" placeholder="Pin Code"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<label for="email">Marital Status :</label>
+										    <select ng-model="maritalStatus" ng-options="maritalStatus for maritalStatus in pc.maritalStatusList" class="form-control input-sm">
+						    					<option value=''>Select</option>
+						    				</select>
+							        	</div>						
+								  	</div>
+								 </div> 	
+							  	<div class="form-group">
+						            <a ng-click="pc.edit(false)" class="btn btn-danger btn-sm">Cancel</a>
+								   	<input type="submit" value="Save" title="create an acount" class="btn btn-primary btn-sm">
+								 </div>
+					    	</div>
+						  </div>
+					   </div>
+					</div>   
+			    	<hr>
+			    <div class="panel-group" id="accordion">	
+					<div class="panel panel-primary">
+				      
+				        	<div class="panel-heading clearfix">
+							        <h4 class="panel-title pull-left" style="padding-top: 7px;"><a data-toggle="collapse" data-parent="#accordion"  data-target="#collapse2">Experience Details</a></h4>
+							       
+				        	        <a href="javascript:expDiv(1);" class="btn btn-default pull-right btn-sm">+ Add</a>
+						    </div>
+				        
+				      	 <div id="collapse2" class="panel-collapse collapse">
+					        <div class="panel-body">
+						    	<div ng-repeat="exp in pc.workExp">
+						    	    <div class="form-group" ng-if="exp.status=='currentEmployer'">
+								    	<div  class="col-md-10"><span>Currently working at Genpact Headstrong as Senior Associate
+										Aug 2015 to Present (0 year(s) - 5 month(s))</span></div>
+										<div class="col-md-2">
+										  	 <a ng-click="pc.editExpDtls(true);" class="btn-link">Edit</a> | <a ng-click="pc.editExpDtls(true);" class="btn-link">  Delete</a>
+										</div>
+									</div>	
+									<div class="form-group" ng-if="exp.status=='previousEmployer'">
+										<div class="col-md-10"><span>
+										Previously worked with CampusLabs Pvt Ltd as Software Programmer
+										Feb 2013 to Aug 2015 (2 year(s) - 6 month(s))</span></div>
+										<div class="col-md-2">
+										  	 <a ng-click="pc.editExpDtls(true);" class="btn-link">Edit</a> | <a ng-click="pc.editExpDtls(true);" class="btn-link">  Delete</a>
+										</div>
+									</div>	
+								</div>	
+								<div ng-hide="pc.editExp">
+									<div class="form-group"> <a ng-click="editExpDtls(true);" class="btn btn-default pull-left btn-lg">+ Add</a></div>
+								</div>
+								
+							    <div ng-show="pc.editExp">
+						    		<div class="form-group"><input type="text" name="appUser.name" id="appUser.name" class="form-control input-sm" placeholder="Employer Name"/>
+						        	</div>
+							        <div class="form-group"><input type="text" name="appUser.name" id="appUser.name" class="form-control input-sm" placeholder="Designation"/>
+						        	</div>
+						        	<div class="form-group">
+						        		<div>
+							                <label >
+							                    <input type="radio" id="q128" name="quality[21]" value="1" /> Previous Employer
+							                </label> 
+							                <label >
+							                    <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" /> Current Employer
+							                </label> 
+							                <label >
+							                    <input type="radio" id="q130" name="quality[21]" value="3" /> Other
+							                </label> 
+						            	</div>
+						    		</div>
+							    	<div class="form-group">
+							    		<div class="col-md-5">
+							    			<div class="col-md-6">
+							    				<select ng-model="fromMonth" ng-options="month.code as month.name for month in pc.months" class="form-control input-sm">
+							    					 <option value=''>Month</option>
+							    				</select>
+							    			 </div>	
+							    		    <div class="col-md-6"> 	
+							    				<select ng-model="fromYear" ng-options="year for year in pc.years" class="form-control input-sm">
+							    					<option value=''>Year</option>
+							    				</select>
+							    			</div>	
+							    		</div>	
+							    		<div class="col-md-1">TO</div>
+							    		<div class="col-md-5">
+							    			<div class="col-md-6">
+							    				<select ng-model="toMonth" ng-options="month.code as month.name for month in pc.months" class="form-control input-sm">
+							    					<option value=''>Month</option>
+							    				</select>
+							    			 </div>	
+							    		    <div class="col-md-6"> 	
+							    				<select ng-model="toYear" ng-options="year for year in pc.years" class="form-control input-sm">
+							    					<option value=''>Year</option>
+							    				</select>
+							    			</div>	
+							    		</div>	
+							    		<div class="col-md-1"></div>
+							    	</div>
+							    	<div class="form-group">
+							            &nbsp;
+							        </div>	
+							        <div class="form-group">
+							            <textarea  name="appUser.jobProfile" class="form-control input-sm" placeholder="Job Profile"></textarea>
+							        </div>
+							         
+							         <div class="form-group">
+							            <a ng-click="editExpDtls(false);" class="btn btn-danger btn-sm">Cancel</a>
+									   	<input type="submit" value="Save" title="create an acount" class="btn btn-primary btn-sm">
+									 </div>
+					   			</div>
+					   		  </div>	
+					      </div>
+			    		</div>
+			    
+					   	 <div class="panel panel-primary">
+						      <div class="panel-heading">
+						        <h4 class="panel-title">
+						          <a data-toggle="collapse" data-parent="#accordion"  data-target="#collapse3">Education Details</a>
+						        </h4>
+						      </div>
+						      <div id="collapse3" class="panel-collapse collapse">
+						        <div class="panel-body">
+							        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+							        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								     <div> <a href="javascript:educationDiv(1);" class="btn btn-default pull-left btn-lg">+ Add</a></div>
+								    <div id="educationDiv" style="display:none;">
+							    		<div class="form-group"><input type="text" name="appUser.name" id="appUser.name" class="form-control input-sm" placeholder="Company"/>
+							        	</div>
+								         <div class="form-group"><input type="text" name="appUser.email" id="appUser.email" class="form-control input-sm" placeholder="Designation"/>
+								        </div>
+								        <div class="form-group"><input type="password" name="appUser.password" id="appUser.password" class="form-control input-sm" placeholder="Job Location"/>
+								        </div>
+								          <div class="form-group"><input type="password" name="appUser.ConfPassword" id="appUser.ConfPassword" class="form-control input-sm" placeholder="Confirm your Password"/>
+								        </div>
+								         <div class="form-group">
+								            <a href="javascript:educationDiv(0);" class="btn btn-danger btn-sm">Cancel</a>
+										   	<input type="submit" value="Save" title="create an acount" class="btn btn-primary btn-sm">
+										 </div>
+						   			</div>   
+							     </div>
+						      </div>
+						    </div>
+			   
+			    		<div class="panel panel-primary">
+						      <div class="panel-heading">
+						        <h4 class="panel-title">
+						          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Project Details</a>
+						        </h4>
+						      </div>
+						      <div id="collapse4" class="panel-collapse collapse">
+						       	<div class="panel-body">
+						        	<div ng-model="project" ng-repeat="project in pc.projects">
+								        <hr>
+								        <div><small class="text-muted">Project Title</small> : {{project.title}}</div>
+								        <div><small class="text-muted">Client:</small> {{project.client}}</div>
+								        <div class="col-md-6">
+										  	<div><small class="text-muted">Role:</small> {{project.role}}</div>
+										</div>
+									  	<div class="col-md-6">
+									  		<div><small class="text-muted">Team  Size:</small> {{project.teamSize}}</div>
+									  	</div>
+									  	<div><small class="text-muted">Skills:</small> {{project.skills}}</div>
+						        	</div>
+						        	
+						        <!-- Add/Edit Project -->
+						        	<div ng-show="true">
+							    		<div class="form-group"><input type="text" name="appUser.name" id="appUser.name" class="form-control input-sm" placeholder="Client"/>
+							        	</div>
+								        <div class="form-group"><input type="text" name="appUser.name" id="appUser.name" class="form-control input-sm" placeholder="Project Title"/>
+							        	</div>
+							        	<div class="form-group">
+							        		<div>Employment Type
+								                <label>         
+								                    <input type="radio" id="q128" name="quality[21]" value="1" /> Full Time
+								                </label> 
+								                <label >
+								                    <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" /> Part Time
+								                </label> 
+								                <label >
+								                    <input type="radio" id="q130" name="quality[21]" value="3" />  Contractual Project
+								                </label> 
+							            	</div>
+							    		</div>
+								    	<div class="form-group">
+								    		<div class="col-md-1">Duration</div>
+								    		<div class="col-md-5">
+								    			<div class="col-md-6">
+								    				<select ng-model="frMonth" ng-options="month.code as month.name for month in pc.months" class="form-control input-sm">
+								    					 <option value=''>Month</option>
+								    				</select>
+								    			 </div>	
+								    		    <div class="col-md-6"> 	
+								    				<select ng-model="frYear" ng-options="year for year in pc.years" class="form-control input-sm">
+								    					<option value=''>Year</option>
+								    				</select>
+								    			</div>	
+								    		</div>	
+								    		<div class="col-md-1">TO</div>
+								    		<div class="col-md-5">
+								    			<div class="col-md-6">
+								    				<select ng-model="toMonth" ng-options="month.code as month.name for month in pc.months" class="form-control input-sm">
+								    					<option value=''>Month</option>
+								    				</select>
+								    			 </div>	
+								    		    <div class="col-md-6"> 	
+								    				<select ng-model="toYear" ng-options="year for year in pc.years" class="form-control input-sm">
+								    					<option value=''>Year</option>
+								    				</select>
+								    			</div>	
+								    		</div>	
+								    		
+								    	</div>
+								    	<div class="form-group">
+								            &nbsp;
+								        </div>	
+								        <div class="form-group">
+								            <textarea  name="appUser.jobProfile" class="form-control input-sm" placeholder="project Details"></textarea>
+								        </div>
+								         <div class="form-group">
+									        <select ng-model="role" ng-options="role for role in pc.roles" class="form-control input-sm">
+						    					 <option value=''>Select Role</option>
+						    				 </select>
+						    			 </div>	 
+								         <div class="form-group">
+								            <textarea  name="appUser.roleDetails" class="form-control input-sm" placeholder="Role Description"></textarea>
+								        </div>
+								         <div class="form-group">
+								            <a ng-click="editExpDtls(false);" class="btn btn-danger btn-sm">Cancel</a>
+										   	<input type="submit" value="Save" title="create an acount" class="btn btn-primary btn-sm">
+										 </div>
+						   			</div>
+						        	
+							    </div> 
+						      </div>
+			    		</div>
+			    	</div>	
+			  		 </div>
+			  	
+			   	<div class="col-md-3" class="bg-danger">
+			   		  <h1><img src="images/Desert.jpg" class="img-responsive" alt="Cinque Terre" width="140" height="200"><h1>
+			   	</div>
+   			
+   		</div>    
+   	</body>	
+</html>

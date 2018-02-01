@@ -1,0 +1,34 @@
+<div class="services-view" ng-controller="ServiceSelector">
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="panel panel-default">
+			<div class="row">
+				<div class="col-md-5">
+					<label for="aclients">Available Services</label> 
+					<div class="form-group">
+				    	<select class="form-control" size="4" multiple ng-model="available" ng-options="client as client.name for client in availableclients"></select>
+				    </div>
+			    </div>        
+				<div class="col-md-2">
+					<div class="row">
+						<button type="button" class="btn btn-default" style="margin: 2px 2px 2px 2px;" ng-click="moveItem(available[0], availableclients,selectedclients)">&gt;&nbsp;</button>
+					</div>
+					<div class="row">
+						<button type="button" class="btn btn-default" style="margin: 2px 2px 2px 2px;" ng-click="moveAll(availableclients,selectedclients)">&gt;&gt;</button>
+					</div>
+					<div class="row">
+						<button type="button" class="btn btn-default" style="margin: 2px 2px 2px 2px;" ng-click="moveItem(selected[0], selectedclients,availableclients)">&lt;&nbsp;</button>
+					</div>
+					<div class="row">
+						<button type="button" class="btn btn-default" style="margin: 2px 2px 2px 2px;" ng-click="moveAll(selectedclients,availableclients)">&lt;&lt;</button>
+					</div>
+				</div>
+   				<div class="col-md-5">
+   					<label for="sclients">Selected Services</label>                                                    
+    				<select class="form-control" size="{{available.length}}" multiple ng-model="selected" ng-options="client as client.name for client in selectedclients"></select>
+   				</div>
+    		</div>
+    	</div>
+    	</div>
+    </div>
+</div>
